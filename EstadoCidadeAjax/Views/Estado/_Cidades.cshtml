@@ -12,12 +12,21 @@
                     <td>
                         Cidade
                     </td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var cidade in Model.Cidades)
                 {
-                    @Html.Partial("_CidadeItem", cidade)
+                    <tr>
+                        <td>
+                            <input type="submit" value="Excluir" />
+                        </td>
+                        <td>
+                            @cidade.Descricao
+                        </td>
+                        <td>@Ajax.ActionLink("Excluir", "ExcluirCidade", "Estado", new { id = cidade.CidadeId }, new AjaxOptions() { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "update2" })</td>
+                    </tr>
                 }
             </tbody>
         </table>

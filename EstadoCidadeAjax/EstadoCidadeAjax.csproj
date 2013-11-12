@@ -230,7 +230,6 @@
     <Content Include="Views\Estado\_EstadoCad.cshtml" />
     <Content Include="Views\Estado\_Cidades.cshtml" />
     <Content Include="Views\Estado\_Cidade.cshtml" />
-    <Content Include="Views\Estado\_CidadeItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

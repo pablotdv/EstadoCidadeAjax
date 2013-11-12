@@ -99,14 +99,14 @@ namespace EstadoCidadeAjax.Controllers
             };
 
             return PartialView("_Cidades", cidadeModel);
-        }
-
-        [HttpPost]
-        public ActionResult ExcluirCidade(Cidade cidade)
-        {            
+        }       
+                
+        public ActionResult ExcluirCidade(int id)
+        {
+            var cidade = db.Cidade.FirstOrDefault(a => a.CidadeId == id);
             if (ModelState.IsValid)
-            {
-                db.Cidade.Remove(db.Cidade.FirstOrDefault(a => a.CidadeId == cidade.CidadeId));
+            {                
+                db.Cidade.Remove(cidade);
                 db.SaveChanges();
             }
 
@@ -117,9 +117,6 @@ namespace EstadoCidadeAjax.Controllers
             };
 
             return PartialView("_Cidades", cidadeModel);
-
-
-
         }
 
         // POST: /Estado/Edit/5
