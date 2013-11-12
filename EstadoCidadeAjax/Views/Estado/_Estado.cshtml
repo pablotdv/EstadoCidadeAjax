@@ -1,0 +1,22 @@
+﻿@model EstadoCidadeAjax.Models.EstadoModel
+
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+<fieldset>
+    <legend>
+        Cad estado
+    </legend>
+    @Html.Partial("_EstadoCad", Model.Estado)
+</fieldset>
+
+<fieldset>
+    <legend>
+        Cidades
+    </legend>
+    @Html.Partial("_Cidades", Model.Cidade)
+</fieldset>
+
+
+

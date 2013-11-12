@@ -1,0 +1,33 @@
+﻿@model EstadoCidadeAjax.Models.Cidade
+@using (Ajax.BeginForm("ExcluirCidade", "Estado", new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "update2"
+        }, new { @id = "CidadeForm2" + @Model.CidadeId }))
+{
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.UsuarioCadId)
+
+    @Html.HiddenFor(model => model.EstadoId)
+
+    @Html.HiddenFor(model => model.CidadeId)
+    
+    @Html.HiddenFor(model => model.Descricao)
+    @Html.HiddenFor(model => model.CodigoIBGE)
+    @Html.HiddenFor(model => model.UsuarioCadId)
+    @Html.HiddenFor(model => model.DataHoraCad)
+    @Html.HiddenFor(model => model.Ativo)
+    
+    
+    <tr>
+        <td>
+            <input type="submit" value="Excluir" />
+        </td>
+        <td>
+            @Model.Descricao
+        </td>
+    </tr>
+
+}

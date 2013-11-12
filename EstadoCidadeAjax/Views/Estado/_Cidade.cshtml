@@ -1,0 +1,33 @@
+﻿@model EstadoCidadeAjax.Models.Cidade
+@using (Ajax.BeginForm("SalvarCidade", "Estado", new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "update2"
+        }, new { @id = "CidadeForm" }))
+{
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.UsuarioCadId)
+
+    @Html.HiddenFor(model => model.EstadoId)
+
+    <fieldset>
+        <legend></legend>
+        <div>
+            <ol>
+                <li class="tamanho500">
+                    @Html.LabelFor(model => model.Descricao)
+                    @Html.EditorFor(model => model.Descricao)
+                    @Html.ValidationMessageFor(model => model.Descricao)
+                </li>
+            </ol>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend></legend>
+        <input type="submit" value="Salvar" id="salvar" />
+    </fieldset>
+
+}

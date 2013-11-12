@@ -1,0 +1,25 @@
+﻿@model EstadoCidadeAjax.Models.CidadeModel
+<div id="update2">
+    @if (Model != null)
+    {
+        <div>
+            @Html.Partial("_Cidade", new EstadoCidadeAjax.Models.Cidade { Descricao = "", EstadoId = Model.EstadoId })
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>
+                        Cidade
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cidade in Model.Cidades)
+                {
+                    @Html.Partial("_CidadeItem", cidade)
+                }
+            </tbody>
+        </table>
+    }
+</div>
